@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider,Outlet } from "react-router";
 import RestaurantMenu from "./components/RestaurantMenu";
+import CuisinesRestaurant from "./components/CuisinesRestaurant";
 // import Grocery from "./components/Grocery"; 
 
 /*<div id="parent">
@@ -110,6 +111,10 @@ const parent=React.createElement("div",{id:"parent"},[
                     {
                         path:"/restaurant/:resId",
                         element:<RestaurantMenu />
+                    },
+                    {
+                        path:"/cuisinesrestaurant/:collectionId/:tags",
+                        element:<CuisinesRestaurant />
                     }],
                 errorElement:<Error />
             },
