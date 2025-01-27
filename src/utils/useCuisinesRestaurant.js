@@ -4,7 +4,7 @@ import { useState,useEffect } from "react";
 
 const useCuisinesRestaurant = (collectionId,tags) => {
     const [cuisinesResInfo,setcuisinesResInfo]=useState(null);
-    console.log(collectionId,tags);
+
     useEffect(() => {
         fetchMenu();
     },[]);

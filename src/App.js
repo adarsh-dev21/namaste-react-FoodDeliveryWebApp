@@ -1,4 +1,4 @@
-import React,{lazy,Suspense} from "react";
+import React,{lazy,Suspense, useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body"; 
@@ -8,7 +8,11 @@ import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider,Outlet } from "react-router";
 import RestaurantMenu from "./components/RestaurantMenu";
 import CuisinesRestaurant from "./components/CuisinesRestaurant";
+import userContext from "./utils/userContext";
 // import Grocery from "./components/Grocery"; 
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 /*<div id="parent">
     <div id="child">
@@ -74,12 +78,29 @@ const parent=React.createElement("div",{id:"parent"},[
         )
         
         const AppLayout=() => {
-            return (
-                <div className="app">
-                    <Header />
-                    <Outlet />
 
+            const [userName,setuserName]=useState();
+
+            //authentication
+            useEffect(() => {
+                //Make an API call and send username & password
+                const data={
+                    name:"Adarsh Abhishek",
+                }
+                setuserName(data.name);
+            },[]);
+
+
+
+            return (
+                <Provider store={appStore}>
+                <userContext.Provider value={{loggedInUser:userName}}>
+                <div className="app">                  
+                    <Header />                   
+                    <Outlet />
                 </div>
+                </userContext.Provider>
+                </Provider>
             );
         };
 
@@ -115,6 +136,10 @@ const parent=React.createElement("div",{id:"parent"},[
                     {
                         path:"/cuisinesrestaurant/:collectionId/:tags",
                         element:<CuisinesRestaurant />
+                    },
+                    {
+                        path:"/cart",
+                        element:<Cart />
                     }],
                 errorElement:<Error />
             },
