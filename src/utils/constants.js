@@ -3,7 +3,7 @@ export const CDN_URL="https://media-assets.swiggy.com/swiggy/image/upload/fl_los
 
 export const LOGO_URL="https://icon-library.com/images/food-app-icon/food-app-icon-12.jpg"
 
-export const MENU_URL="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9352403&lng=77.624532&restaurantId="
+export const MENU_URL="https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9352403&lng=77.624532&restaurantId="
 
 export const GREEN_URL="https://www.iconarchive.com/download/i136499/microsoft/fluentui-emoji-3d/Green-Square-3d.1024.png";
 
