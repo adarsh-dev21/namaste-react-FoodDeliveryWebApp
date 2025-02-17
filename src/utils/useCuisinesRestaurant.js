@@ -10,7 +10,7 @@ const useCuisinesRestaurant = (collectionId,tags) => {
     },[]);
 
     const fetchMenu = async () => {
-        const response = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&collection=${collectionId}&tags=${tags}&sortBy=&filters=&type=rcv2&offset=0&page_type=null`);
+        const response = await fetch(`https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&collection=${collectionId}&tags=${tags}&sortBy=&filters=&type=rcv2&offset=0&page_type=null`);
         const json = await response.json();
 
         
